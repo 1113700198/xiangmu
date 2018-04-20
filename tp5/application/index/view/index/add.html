@@ -1,0 +1,13 @@
+{extend name="template/layout" /}
+{block name='content'}
+<div>这是品牌管理系统</div>
+<form action="{:url('addSave')}" method="post" enctype="multipart/form-data">
+    品牌名： <input type="text" name="title"><br><br>
+    图像：<input type="file" name="logo"><br><br>
+    地址: <input type="text" name="site"><br><br>
+    权限： <input type="radio" name="sort" value="0" checked>可销售
+    <input type="radio" name="sort" value="1">不可销售
+    <br><br>
+    <input type="submit" value="添加">
+</form>
+{/block}

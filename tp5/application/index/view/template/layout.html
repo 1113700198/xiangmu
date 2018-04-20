@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{block name="title"}败家shop管理系统{/block}</title>
+	<link rel="stylesheet" href="__STATIC__/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="__STATIC__/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="__STATIC__/stylesheet/stylesheet.css" media="screen" />
+	{block name='appendCss'}{/block}
+</head>
+<body>
+<div id="container">
+	{include file='template/header' /}
+	{include file='template/left'}
+	<div id="content">
+		{block name='content'}{/block}
+	</div>
+	{include file='template/footer' /}
+	
+	<script type="text/javascript" src="__STATIC__/jquery/jquery-2.1.1.min.js"></script>		
+	<script type="text/javascript" src="__STATIC__/bootstrap/js/bootstrap.min.js"></script>		
+	<script type="text/javascript" src="__STATIC__/javascript/common.js"></script>
+	{block name='appendJs'}{/block}		
+</div>
+</body>
+</html>

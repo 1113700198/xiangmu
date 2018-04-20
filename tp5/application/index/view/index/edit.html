@@ -1,0 +1,14 @@
+{extend name="template/layout" /}
+{block name='content'}
+<div>这是品牌管理系统</div>
+<form action="{:url('editSave')}" method="post" enctype="multipart/form-data">
+    <input type="hidden" value="{$data.id}" name="id">
+    品牌名： <input type="text" name="title" value="{$data.title}"><br><br>
+    图像：<input type="file" name="logo" value="{$data.logo}"><img src="/TPday16/public/uploads/{$data.logo}" width="50" height="50"><br><br>
+    地址: <input type="text" name="site" value="{$data.site}"><br><br>
+    权限： <input type="radio" name="sort" value="0" checked>可销售
+    <input type="radio" name="sort" value="1" {if condition="$data['sort'] eq 1"}checked{/if} >不可销售
+    <br><br>
+    <input type="submit" value="修改">
+</form>
+{/block}

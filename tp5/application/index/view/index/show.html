@@ -1,0 +1,32 @@
+{extend name="template/layout" /}
+{block name='content'}
+<div>这是品牌管理系统</div>
+<a href="{:url('add')}">添加</a>
+<table border="1" cellpadding="10" cellspacing="0" style="width: 1200px">
+    <tr style="width: 50px;height: 40px">
+        <th>编号</th>
+        <th>添加时间</th>
+        <th>修改时间</th>
+        <th>品牌名</th>
+        <th>图像</th>
+        <th>地址</th>
+        <th>sort</th>
+        <th>操作</th>
+    </tr>
+    {volist name="data" id="val"}
+    <tr style="width: 50px;height: 40px">
+        <td>{$val.id}</td>
+        <td>{$val.createT|date='Y-m-d H:i:s',###}</td>
+        <td>{$val.updateT|date='Y-m-d H:i:s',###}</td>
+        <td>{$val.title}</td>
+        <td><img src="/TPday16/public/uploads/{$val.logo}" width="50" height="50"></td>
+        <td>{$val.site}</td>
+        <td>{$val.sort|=='1'?'不可销售':'可销售'}</td>
+        <td>
+            <a href="{:url('edit',['id'=>$val['id']])}">修改</a>
+            <a href="{:url('delete',['id'=>$val['id']])}">删除</a>
+        </td>
+    </tr>
+    {/volist}
+</table>
+{/block}
